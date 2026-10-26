@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Red Solution &amp; Limkorm «Подарки всем»!</title>
+  <meta name="description" content="Покупайте корм AJO, SIRIUS, Одно Мясо или Наш Рацион, регистрируйте чек и участвуйте в розыгрыше техники RED SOLUTION. Гарантированный подарок — промокод LIMKORM.">
+  <!-- Концепт до утверждения правил акции. Перед запуском удалить noindex (см. README). -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f5a211">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Red Solution &amp; Limkorm «Подарки всем»!">
+  <meta property="og:site_name" content="Red Solution &amp; Limkorm «Подарки всем»!">
+  <meta property="og:description" content="Покупайте корм, регистрируйте чек и участвуйте в розыгрыше техники RED SOLUTION.">
+  <meta property="og:image" content="assets/img/og-cover.jpg">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/img/hero-pets.webp" as="image" type="image/webp">
+  <link rel="stylesheet" href="css/styles.css?v=14">
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="js/main.js?v=14" defer></script>
+  <script src="js/brands-scene.js?v=14" defer></script>
+  <script src="js/gift.js?v=14" defer></script>
+  <script src="js/winners.js?v=14" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 48 48"><path d="M4 7h6l5 24h23l5-17H13"/><circle cx="18" cy="39" r="3"/><circle cx="35" cy="39" r="3"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 48 48"><path d="M10 4h28v40l-5-3-5 3-4-3-4 3-5-3-5 3z"/><path d="M17 14h14M17 21h14M17 28h9"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 48 48"><path d="M6 16h36v9H6zM9 25v18h30V25M24 16v27"/><path d="M24 16c-3-8-13-10-13-3 0 3 6 3 13 3zM24 16c3-8 13-10 13-3 0 3-6 3-13 3z"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 48 48"><path d="M14 6h20v12a10 10 0 0 1-20 0zM14 10H7c0 7 3 11 8 12M34 10h7c0 7-3 11-8 12M24 28v8M16 42h16M18 42c0-4 2-6 6-6s6 2 6 6"/></symbol>
+    <symbol id="i-paw" viewBox="0 0 48 48"><ellipse cx="24" cy="32" rx="9" ry="8"/><ellipse cx="12" cy="21" rx="4" ry="5"/><ellipse cx="19" cy="12" rx="4" ry="5"/><ellipse cx="29" cy="12" rx="4" ry="5"/><ellipse cx="36" cy="21" rx="4" ry="5"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 48 48"><rect x="6" y="9" width="36" height="33" rx="4"/><path d="M6 19h36M15 4v9M33 4v9"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 48 48"><path d="M11 4h18l9 9v31H11z"/><path d="M29 4v9h9M17 24h15M17 31h15M17 38h9"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="pet-dog" viewBox="0 0 120 100"><ellipse cx="22" cy="50" rx="15" ry="28" transform="rotate(18 22 50)" fill="#c07f3e"/><ellipse cx="98" cy="50" rx="15" ry="28" transform="rotate(-18 98 50)" fill="#c07f3e"/><ellipse cx="60" cy="52" rx="37" ry="36" fill="#e3a35f"/><ellipse cx="60" cy="72" rx="22" ry="16" fill="#f0c18c"/><circle cx="45" cy="47" r="6.5" fill="#2b2b2b"/><circle cx="75" cy="47" r="6.5" fill="#2b2b2b"/><circle cx="47" cy="45" r="2" fill="#fff"/><circle cx="77" cy="45" r="2" fill="#fff"/><ellipse cx="60" cy="64" rx="8" ry="6" fill="#2b2b2b"/><path d="M51 75 Q60 82 69 75" fill="none" stroke="#2b2b2b" stroke-width="2" stroke-linecap="round"/><ellipse cx="60" cy="83" rx="5" ry="6" fill="#e46b6b"/></symbol>
+    <symbol id="pet-cat" viewBox="0 0 120 100"><path d="M18 46 L26 4 L52 28 Z" fill="#444"/><path d="M102 46 L94 4 L68 28 Z" fill="#444"/><path d="M26 34 L29 14 L42 28 Z" fill="#e8a3a3" opacity=".7"/><path d="M94 34 L91 14 L78 28 Z" fill="#e8a3a3" opacity=".7"/><ellipse cx="60" cy="58" rx="40" ry="34" fill="#444"/><ellipse cx="44" cy="54" rx="9" ry="10" fill="#f5c542"/><ellipse cx="76" cy="54" rx="9" ry="10" fill="#f5c542"/><ellipse cx="44" cy="54" rx="2.8" ry="7" fill="#1f1f1f"/><ellipse cx="76" cy="54" rx="2.8" ry="7" fill="#1f1f1f"/><path d="M55 67 L65 67 L60 72 Z" fill="#e8a3a3"/><path d="M60 72 Q56 78 51 75 M60 72 Q64 78 69 75" fill="none" stroke="#2b2b2b" stroke-width="1.6" stroke-linecap="round"/><path d="M40 68 L14 64 M40 72 L15 75 M80 68 L106 64 M80 72 L105 75" stroke="#9a9a9a" stroke-width="1.2" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="container site-header__bar">
+      <a class="wordmark" translate="no" href="#top" aria-label="LIMKORM — в начало страницы">LIMKORM</a>
+      <nav class="site-nav" id="site-nav" aria-label="Разделы страницы">
+        <ul class="site-nav__list">
+          <li><a href="#how">Как участвовать</a></li>
+          <li><a href="#brands">Бренды</a></li>
+          <li><a href="#buy">Где купить</a></li>
+          <li><a href="#prizes">Призы</a></li>
+          <li><a href="#winners">Победители</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <button class="btn btn--dark site-nav__cta" type="button" data-open="receipt-dialog">
+          Зарегистрировать чек <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+      </nav>
+      <button class="btn btn--dark site-header__cta" type="button" data-open="receipt-dialog">
+        Зарегистрировать чек <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </button>
+      <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню">
+        <svg class="icon icon--menu" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="icon icon--close" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <h1 class="hero__title" id="hero-title">Подарки<br> каждому</h1>
+          <p class="hero__lead">Покупай корм. Регистрируй чек. Участвуй в&nbsp;розыгрыше призов от&nbsp;RED&nbsp;SOLUTION.</p>
+          <button class="btn btn--dark btn--lg" type="button" data-open="receipt-dialog">
+            Зарегистрировать чек <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </button>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__burst" aria-hidden="true"></div>
+          <img class="hero__pets" src="assets/img/hero-pets.webp" width="619" height="535"
+               alt="Белая кошка и щенок рядом с автоматической кормушкой RED SOLUTION" fetchpriority="high">
+          <div class="promo-card hero__promo">
+            <p class="promo-card__label">Гарантированный подарок:</p>
+            <div class="promo-card__code">
+              <span class="promo-tag">промокод</span>
+              <strong class="promo-code" translate="no">LIMKORM</strong>
+            </div>
+            <p class="promo-card__terms"><b>Скидка 1&nbsp;000&nbsp;₽</b> при покупке от&nbsp;3&nbsp;000&nbsp;₽ в&nbsp;<span class="nowrap">интернет-магазине</span> RED&nbsp;SOLUTION</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <h2 class="section-title" id="how-title"><span class="title-mark">Как участвовать?</span></h2>
+        <ol class="steps" data-steps>
+          <li class="step">
+            <div class="step__head">
+              <span class="step__num" aria-hidden="true">1</span>
+              <h3 class="step__title">Покупай корм</h3>
+            </div>
+            <p class="step__text">AJO, SIRIUS, Одно Мясо или Наш Рацион на&nbsp;Ozon, Wildberries или в&nbsp;Яндекс Маркете.</p>
+            <div class="step__art packs-fan" aria-hidden="true">
+              <img src="assets/brands/pack-ajo.webp" width="262" height="435" loading="lazy" alt="">
+              <img src="assets/brands/pack-sirius.webp" width="286" height="432" loading="lazy" alt="">
+              <img src="assets/brands/pack-one-meat.webp" width="290" height="426" loading="lazy" alt="">
+              <img src="assets/brands/pack-nash-ratsion.webp" width="288" height="442" loading="lazy" alt="">
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__head">
+              <span class="step__num" aria-hidden="true">2</span>
+              <h3 class="step__title">Регистрируй чек</h3>
+            </div>
+            <p class="step__text">Сфотографируй чек и&nbsp;загрузи его на&nbsp;сайте.</p>
+            <button class="btn btn--dark btn--sm step__cta" type="button" data-open="receipt-dialog">
+              Зарегистрировать чек <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </button>
+            <div class="step__art" aria-hidden="true">
+              <div class="receipt">
+                <p class="receipt__shop">Кассовый чек</p>
+                <p class="receipt__row"><span>Корм AJO</span><span>1&nbsp;890&nbsp;₽</span></p>
+                <p class="receipt__row"><span>Корм SIRIUS</span><span>1&nbsp;240&nbsp;₽</span></p>
+                <p class="receipt__row receipt__row--total"><span>Итого</span><span>3&nbsp;130&nbsp;₽</span></p>
+                <span class="receipt__stamp"><svg class="icon"><use href="#i-check"/></svg></span>
+              </div>
+            </div>
+          </li>
+          <li class="step step--final">
+            <div class="step__head">
+              <span class="step__num" aria-hidden="true">3</span>
+              <h3 class="step__title">Участвуй в&nbsp;розыгрыше призов</h3>
+            </div>
+            <p class="step__text">Разыгрываем технику RED&nbsp;SOLUTION, а&nbsp;промокод LIMKORM получает каждый участник.</p>
+            <div class="step__art" aria-hidden="true">
+              <img class="step__prize" src="assets/prizes/red-prize-1.svg" width="442" height="268" loading="lazy" alt="">
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Brands -->
+    <section class="section section--flush-top brands-section" id="brands" aria-labelledby="brands-title">
+      <div class="container">
+        <h2 class="section-title" id="brands-title"><span class="title-mark">Бренды акции</span></h2>
+        <div class="brands-stage">
+          <div class="brands-scene" aria-hidden="true" data-brands-scene>
+            <div class="runner runner--dog" data-runner="dog">
+              <svg class="runner__svg" viewBox="0 0 220 132" aria-hidden="true" focusable="false">
+                <g class="rig">
+                  <g class="leg-bf" data-pivot="72 74"><rect x="63.5" y="68" width="17" height="32" rx="8.5" fill="#c88842"/><g class="leg-bf-low" data-pivot="72 98"><rect x="65.5" y="94" width="13" height="28" rx="6.5" fill="#c88842"/><ellipse cx="75" cy="121" rx="9.5" ry="4.5" fill="#b77a37"/></g></g>
+                  <g class="leg-ff" data-pivot="150 74"><rect x="142.0" y="68" width="16" height="32" rx="8.0" fill="#c88842"/><g class="leg-ff-low" data-pivot="150 98"><rect x="144.0" y="94" width="12" height="28" rx="6.0" fill="#c88842"/><ellipse cx="153" cy="121" rx="9.0" ry="4.5" fill="#b77a37"/></g></g>
+                  <g class="tail-wrap" data-pivot="44 58"><g class="tail" data-pivot="44 58"><path d="M46 58 Q 22 52 12 30" fill="none" stroke="#e3a35f" stroke-width="10" stroke-linecap="round"/></g></g>
+                  <ellipse cx="98" cy="66" rx="58" ry="24" fill="#e3a35f"/>
+                  <ellipse cx="148" cy="64" rx="25" ry="23" fill="#e3a35f"/>
+                  <ellipse cx="120" cy="80" rx="30" ry="9" fill="#f0c18c"/>
+                  <g class="leg-bn" data-pivot="78 76"><ellipse cx="76" cy="70" rx="21" ry="19" fill="#e3a35f"/><rect x="69.0" y="70" width="18" height="32" rx="9.0" fill="#e3a35f"/><g class="leg-bn-low" data-pivot="78 100"><rect x="71.0" y="96" width="14" height="28" rx="7.0" fill="#e3a35f"/><ellipse cx="81" cy="123" rx="10.0" ry="4.5" fill="#cf9150"/></g></g>
+                  <g class="leg-fn" data-pivot="144 76"><ellipse cx="145" cy="70" rx="15" ry="16" fill="#e3a35f"/><rect x="135.5" y="70" width="17" height="32" rx="8.5" fill="#e3a35f"/><g class="leg-fn-low" data-pivot="144 100"><rect x="137.5" y="96" width="13" height="28" rx="6.5" fill="#e3a35f"/><ellipse cx="147" cy="123" rx="9.5" ry="4.5" fill="#cf9150"/></g></g>
+                  <g class="head-wrap" data-pivot="160 54"><g class="head" data-pivot="160 54">
+                    <ellipse cx="166" cy="46" rx="15" ry="17" fill="#e3a35f"/>
+                    <ellipse cx="179" cy="31" rx="20" ry="17" fill="#e3a35f"/>
+                    <ellipse cx="197" cy="38" rx="14" ry="9.5" fill="#f0c18c"/>
+                    <ellipse cx="209" cy="34" rx="4.4" ry="3.6" fill="#2b2b2b"/>
+                    <circle cx="186" cy="26" r="2.8" fill="#2b2b2b"/>
+                    <path d="M195 46 Q 201 50 206 45" fill="none" stroke="#2b2b2b" stroke-width="1.6" stroke-linecap="round"/>
+                    <path d="M168 16 C 158 22 157 42 164 50 C 173 45 177 30 175 17 Z" fill="#c07f3e"/>
+                  </g></g>
+                </g>
+              </svg>
+            </div>
+            <div class="runner runner--cat" data-runner="cat">
+              <svg class="runner__svg" viewBox="0 0 220 132" aria-hidden="true" focusable="false">
+                <g class="rig">
+                  <g class="leg-bf" data-pivot="70 76"><rect x="63.0" y="70" width="14" height="32" rx="7.0" fill="#2f2f2f"/><g class="leg-bf-low" data-pivot="70 100"><rect x="64.5" y="96" width="11" height="28" rx="5.5" fill="#2f2f2f"/><ellipse cx="73" cy="123" rx="8.5" ry="4.5" fill="#262626"/></g></g>
+                  <g class="leg-ff" data-pivot="146 76"><rect x="139.5" y="70" width="13" height="32" rx="6.5" fill="#2f2f2f"/><g class="leg-ff-low" data-pivot="146 100"><rect x="141.0" y="96" width="10" height="28" rx="5.0" fill="#2f2f2f"/><ellipse cx="149" cy="123" rx="8.0" ry="4.5" fill="#262626"/></g></g>
+                  <g class="tail-wrap" data-pivot="40 62"><g class="tail" data-pivot="40 62"><path d="M42 62 C 20 62 8 46 14 22" fill="none" stroke="#444" stroke-width="8" stroke-linecap="round"/></g></g>
+                  <ellipse cx="100" cy="70" rx="58" ry="19" fill="#444"/>
+                  <ellipse cx="146" cy="66" rx="19" ry="18" fill="#444"/>
+                  <g class="leg-bn" data-pivot="76 78"><ellipse cx="74" cy="73" rx="19" ry="16" fill="#444"/><rect x="68.5" y="72" width="15" height="32" rx="7.5" fill="#444"/><g class="leg-bn-low" data-pivot="76 102"><rect x="70.0" y="98" width="12" height="28" rx="6.0" fill="#444"/><ellipse cx="79" cy="125" rx="9.0" ry="4.5" fill="#3a3a3a"/></g></g>
+                  <g class="leg-fn" data-pivot="140 78"><ellipse cx="141" cy="73" rx="13" ry="13" fill="#444"/><rect x="133.0" y="72" width="14" height="32" rx="7.0" fill="#444"/><g class="leg-fn-low" data-pivot="140 102"><rect x="134.5" y="98" width="11" height="28" rx="5.5" fill="#444"/><ellipse cx="143" cy="125" rx="8.5" ry="4.5" fill="#3a3a3a"/></g></g>
+                  <g class="head-wrap" data-pivot="156 58"><g class="head" data-pivot="156 58">
+                    <ellipse cx="172" cy="48" rx="18" ry="16" fill="#444"/>
+                    <path d="M158 40 L161 18 L174 34 Z" fill="#444"/>
+                    <path d="M176 33 L189 16 L190 40 Z" fill="#444"/>
+                    <path d="M162 36 L163 25 L170 34 Z" fill="#e8a3a3" opacity=".6"/>
+                    <ellipse cx="186" cy="54" rx="9" ry="6.5" fill="#5a5a5a"/>
+                    <ellipse cx="181" cy="45" rx="2.8" ry="3.4" fill="#f5c542"/>
+                    <ellipse cx="181.6" cy="45" rx="1" ry="2.6" fill="#1f1f1f"/>
+                    <path d="M192 51 l3 -1.6 l0.4 3 z" fill="#e8a3a3"/>
+                    <path d="M188 56 l14 -2 M188 58 l13 2" stroke="#8a8a8a" stroke-width=".8"/>
+                  </g></g>
+                </g>
+              </svg>
+            </div>
+          </div>
+        <ul class="brands" role="list">
+          <li class="brand">
+            <span class="brand__stack">
+              <span class="peek peek--dog" aria-hidden="true"><svg viewBox="0 0 120 100" focusable="false"><ellipse cx="22" cy="50" rx="15" ry="28" transform="rotate(18 22 50)" fill="#c07f3e"/><ellipse cx="98" cy="50" rx="15" ry="28" transform="rotate(-18 98 50)" fill="#c07f3e"/><ellipse cx="60" cy="52" rx="37" ry="36" fill="#e3a35f"/><ellipse cx="60" cy="72" rx="22" ry="16" fill="#f0c18c"/><g class="peek__eyes"><circle cx="45" cy="47" r="6.5" fill="#2b2b2b"/><circle cx="75" cy="47" r="6.5" fill="#2b2b2b"/><circle cx="47" cy="45" r="2" fill="#fff"/><circle cx="77" cy="45" r="2" fill="#fff"/></g><ellipse cx="60" cy="64" rx="8" ry="6" fill="#2b2b2b"/><path d="M51 75 Q60 82 69 75" fill="none" stroke="#2b2b2b" stroke-width="2" stroke-linecap="round"/><ellipse cx="60" cy="83" rx="5" ry="6" fill="#e46b6b"/></svg></span>
+              <img class="brand__pack" src="assets/brands/pack-ajo.webp" width="262" height="435" loading="lazy" alt="Упаковка корма AJO">
+              <span class="peek-paws" aria-hidden="true"><svg viewBox="0 0 120 30" focusable="false"><ellipse cx="36" cy="18" rx="14" ry="11" fill="#e3a35f"/><ellipse cx="84" cy="18" rx="14" ry="11" fill="#e3a35f"/><path d="M31 12 v8 M36 11 v9 M41 12 v8 M79 12 v8 M84 11 v9 M89 12 v8" stroke="#c07f3e" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+            </span>
+            <span class="brand__shelf" aria-hidden="true"></span>
+            <a class="brand__tag" href="#buy">
+              <img class="brand__logo brand__logo--ajo" src="assets/brands/ajo.png" width="640" height="323" loading="lazy" alt="AJO">
+              <span class="visually-hidden"> — где купить</span>
+            </a>
+          </li>
+          <li class="brand">
+            <span class="brand__stack">
+              <span class="peek peek--cat" aria-hidden="true"><svg viewBox="0 0 120 100" focusable="false"><path d="M18 46 L26 4 L52 28 Z" fill="#444"/><path d="M102 46 L94 4 L68 28 Z" fill="#444"/><path d="M26 34 L29 14 L42 28 Z" fill="#e8a3a3" opacity=".7"/><path d="M94 34 L91 14 L78 28 Z" fill="#e8a3a3" opacity=".7"/><ellipse cx="60" cy="58" rx="40" ry="34" fill="#444"/><ellipse cx="44" cy="54" rx="9" ry="10" fill="#f5c542"/><ellipse cx="76" cy="54" rx="9" ry="10" fill="#f5c542"/><g class="peek__eyes"><ellipse cx="44" cy="54" rx="2.8" ry="7" fill="#1f1f1f"/><ellipse cx="76" cy="54" rx="2.8" ry="7" fill="#1f1f1f"/></g><path d="M55 67 L65 67 L60 72 Z" fill="#e8a3a3"/><path d="M60 72 Q56 78 51 75 M60 72 Q64 78 69 75" fill="none" stroke="#2b2b2b" stroke-width="1.6" stroke-linecap="round"/><path d="M40 68 L14 64 M40 72 L15 75 M80 68 L106 64 M80 72 L105 75" stroke="#9a9a9a" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+              <img class="brand__pack" src="assets/brands/pack-sirius.webp" width="286" height="432" loading="lazy" alt="Упаковка корма SIRIUS">
+              <span class="peek-paws" aria-hidden="true"><svg viewBox="0 0 120 30" focusable="false"><ellipse cx="36" cy="18" rx="14" ry="11" fill="#444"/><ellipse cx="84" cy="18" rx="14" ry="11" fill="#444"/><path d="M31 12 v8 M36 11 v9 M41 12 v8 M79 12 v8 M84 11 v9 M89 12 v8" stroke="#2b2b2b" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+            </span>
+            <span class="brand__shelf" aria-hidden="true"></span>
+            <a class="brand__tag" href="#buy">
+              <img class="brand__logo brand__logo--sirius" src="assets/brands/sirius.png" width="520" height="104" loading="lazy" alt="SIRIUS">
+              <span class="visually-hidden"> — где купить</span>
+            </a>
+          </li>
+          <li class="brand">
+            <span class="brand__stack">
+              <span class="peek peek--cat" aria-hidden="true"><svg viewBox="0 0 120 100" focusable="false"><path d="M18 46 L26 4 L52 28 Z" fill="#444"/><path d="M102 46 L94 4 L68 28 Z" fill="#444"/><path d="M26 34 L29 14 L42 28 Z" fill="#e8a3a3" opacity=".7"/><path d="M94 34 L91 14 L78 28 Z" fill="#e8a3a3" opacity=".7"/><ellipse cx="60" cy="58" rx="40" ry="34" fill="#444"/><ellipse cx="44" cy="54" rx="9" ry="10" fill="#f5c542"/><ellipse cx="76" cy="54" rx="9" ry="10" fill="#f5c542"/><g class="peek__eyes"><ellipse cx="44" cy="54" rx="2.8" ry="7" fill="#1f1f1f"/><ellipse cx="76" cy="54" rx="2.8" ry="7" fill="#1f1f1f"/></g><path d="M55 67 L65 67 L60 72 Z" fill="#e8a3a3"/><path d="M60 72 Q56 78 51 75 M60 72 Q64 78 69 75" fill="none" stroke="#2b2b2b" stroke-width="1.6" stroke-linecap="round"/><path d="M40 68 L14 64 M40 72 L15 75 M80 68 L106 64 M80 72 L105 75" stroke="#9a9a9a" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+              <img class="brand__pack" src="assets/brands/pack-one-meat.webp" width="290" height="426" loading="lazy" alt="Упаковка корма Одно Мясо">
+              <span class="peek-paws" aria-hidden="true"><svg viewBox="0 0 120 30" focusable="false"><ellipse cx="36" cy="18" rx="14" ry="11" fill="#444"/><ellipse cx="84" cy="18" rx="14" ry="11" fill="#444"/><path d="M31 12 v8 M36 11 v9 M41 12 v8 M79 12 v8 M84 11 v9 M89 12 v8" stroke="#2b2b2b" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+            </span>
+            <span class="brand__shelf" aria-hidden="true"></span>
+            <a class="brand__tag" href="#buy">
+              <img class="brand__logo brand__logo--meat" src="assets/brands/one-meat.png" width="440" height="485" loading="lazy" alt="Одно Мясо">
+              <span class="visually-hidden"> — где купить</span>
+            </a>
+          </li>
+          <li class="brand">
+            <span class="brand__stack">
+              <span class="peek peek--dog" aria-hidden="true"><svg viewBox="0 0 120 100" focusable="false"><ellipse cx="22" cy="50" rx="15" ry="28" transform="rotate(18 22 50)" fill="#c07f3e"/><ellipse cx="98" cy="50" rx="15" ry="28" transform="rotate(-18 98 50)" fill="#c07f3e"/><ellipse cx="60" cy="52" rx="37" ry="36" fill="#e3a35f"/><ellipse cx="60" cy="72" rx="22" ry="16" fill="#f0c18c"/><g class="peek__eyes"><circle cx="45" cy="47" r="6.5" fill="#2b2b2b"/><circle cx="75" cy="47" r="6.5" fill="#2b2b2b"/><circle cx="47" cy="45" r="2" fill="#fff"/><circle cx="77" cy="45" r="2" fill="#fff"/></g><ellipse cx="60" cy="64" rx="8" ry="6" fill="#2b2b2b"/><path d="M51 75 Q60 82 69 75" fill="none" stroke="#2b2b2b" stroke-width="2" stroke-linecap="round"/><ellipse cx="60" cy="83" rx="5" ry="6" fill="#e46b6b"/></svg></span>
+              <img class="brand__pack" src="assets/brands/pack-nash-ratsion.webp" width="288" height="442" loading="lazy" alt="Упаковка корма Наш Рацион">
+              <span class="peek-paws" aria-hidden="true"><svg viewBox="0 0 120 30" focusable="false"><ellipse cx="36" cy="18" rx="14" ry="11" fill="#e3a35f"/><ellipse cx="84" cy="18" rx="14" ry="11" fill="#e3a35f"/><path d="M31 12 v8 M36 11 v9 M41 12 v8 M79 12 v8 M84 11 v9 M89 12 v8" stroke="#c07f3e" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+            </span>
+            <span class="brand__shelf" aria-hidden="true"></span>
+            <a class="brand__tag" href="#buy">
+              <img class="brand__logo brand__logo--nash" src="assets/brands/nash-ratsion.png" width="640" height="229" loading="lazy" alt="Наш Рацион">
+              <span class="visually-hidden"> — где купить</span>
+            </a>
+          </li>
+        </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Where to buy -->
+    <section class="band band--accent stores" id="buy" aria-labelledby="buy-title">
+      <div class="container stores__grid">
+        <div class="stores__head">
+          <h2 class="section-title" id="buy-title">Где купить?</h2>
+          <p class="stores__lead">Корм для акции продаётся в&nbsp;официальных магазинах LIMKORM на&nbsp;маркетплейсах.</p>
+        </div>
+        <ul class="stores__list" role="list">
+          <li>
+            <a class="store store--ozon" aria-label="Ozon: официальный магазин LIMKORM, откроется в новой вкладке" href="https://www.ozon.ru/seller/ofitsialnyy-magazin-proizvoditelya-limkorm/" target="_blank" rel="noopener">
+              <span class="store__main">
+                <span class="store__mark"><span class="store__ozon" translate="no">OZON</span></span>
+                <span class="store__note">Официальный магазин LIMKORM</span>
+              </span>
+              <span class="store__stub" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+            </a>
+          </li>
+          <li>
+            <a class="store store--wb" aria-label="Wildberries: официальный магазин LIMKORM, откроется в новой вкладке" href="https://www.wildberries.ru/seller/1279560" target="_blank" rel="noopener">
+              <span class="store__main">
+                <span class="store__mark"><img class="store__wb" src="assets/img/store-wb.png" width="120" height="120" alt=""><span class="store__name" translate="no">Wildberries</span></span>
+                <span class="store__note">Официальный магазин LIMKORM</span>
+              </span>
+              <span class="store__stub" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+            </a>
+          </li>
+          <li>
+            <a class="store store--market" aria-label="Яндекс Маркет: официальный магазин LIMKORM, откроется в новой вкладке" href="https://market.yandex.ru/business--limkorm-petfud/54131066" target="_blank" rel="noopener">
+              <span class="store__main">
+                <span class="store__mark"><img class="store__market" src="assets/img/store-market.png" width="536" height="108" alt=""></span>
+                <span class="store__note">Официальный магазин LIMKORM</span>
+              </span>
+              <span class="store__stub" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Guaranteed gift -->
+    <section class="band band--dark gift" id="gift" aria-labelledby="gift-title">
+      <div class="container gift__grid">
+        <div class="gift__copy">
+          <h2 class="section-title" id="gift-title">Подарок каждому участнику</h2>
+          <p class="gift__note">Промокод на&nbsp;скидку в&nbsp;интернет-магазине redsolution.company. Порядок получения и&nbsp;срок действия будут указаны в&nbsp;правилах акции.</p>
+          <a class="btn btn--accent" href="https://redsolution.company" target="_blank" rel="noopener">
+            В магазин RED SOLUTION <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+        <div class="gift__stage" data-gift>
+          <div class="gift__coupon" id="gift-coupon">
+            <span class="promo-tag">промокод</span>
+            <div class="gift__code">
+              <strong class="promo-code promo-code--lg" id="promo-code" translate="no">LIMKORM</strong>
+              <button class="gift__copy-code" type="button" data-copy="LIMKORM" title="Скопировать промокод">
+                <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>
+                <span class="visually-hidden">Скопировать промокод</span>
+              </button>
+            </div>
+            <p class="gift__terms"><b>Скидка 1&nbsp;000&nbsp;₽</b> при покупке от&nbsp;3&nbsp;000&nbsp;₽ в&nbsp;<span class="nowrap">интернет-магазине</span> RED&nbsp;SOLUTION</p>
+          </div>
+          <div class="gift__box" aria-hidden="true" data-gift-box>
+            <span class="gift__lid">
+              <svg class="gift__bow" viewBox="0 0 120 60"><path d="M60 46 C 40 10 6 6 10 30 C 13 46 40 48 60 46 Z" fill="#fff"/><path d="M60 46 C 80 10 114 6 110 30 C 107 46 80 48 60 46 Z" fill="#fff"/><path d="M60 46 C 46 26 24 22 22 32 M60 46 C 74 26 96 22 98 32" fill="none" stroke="#e8e1d6" stroke-width="3" stroke-linecap="round"/><ellipse cx="60" cy="46" rx="10" ry="8" fill="#f2ede4"/></svg>
+            </span>
+            <span class="gift__body"></span>
+          </div>
+          <div class="gift__confetti" aria-hidden="true" data-gift-confetti></div>
+          <button class="btn btn--accent gift__open" type="button" aria-controls="gift-coupon" aria-expanded="true" data-gift-open hidden>
+            Открыть подарок
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prizes -->
+    <section class="section" id="prizes" aria-labelledby="prizes-title">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <h2 class="section-title" id="prizes-title"><span class="title-mark">Призы от RED SOLUTION</span></h2>
+            <p class="section-lead">Выигрывайте технику для дома от&nbsp;RED&nbsp;SOLUTION.</p>
+          </div>
+          <p class="section-aside">Количество призов и&nbsp;даты розыгрышей будут указаны в&nbsp;правилах.</p>
+        </div>
+        <ul class="prizes" role="list">
+          <li class="prize">
+            <div class="prize__stage">
+              <span class="prize__podium" aria-hidden="true"></span>
+              <img class="prize__img" src="assets/prizes/red-prize-1.svg" width="442" height="268" loading="lazy" decoding="async" alt="Умный робот RED SOLUTION LOONA">
+            </div>
+            <h3 class="prize__title">Умный робот LOONA</h3>
+            <p class="prize__brand">RED SOLUTION</p>
+          </li>
+          <li class="prize">
+            <div class="prize__stage">
+              <span class="prize__podium" aria-hidden="true"></span>
+              <img class="prize__img" src="assets/prizes/red-prize-2.svg" width="442" height="268" loading="lazy" decoding="async" alt="Гриль-духовка RED SOLUTION G850P">
+            </div>
+            <h3 class="prize__title"><span class="nowrap">Гриль-духовка</span> G850P</h3>
+            <p class="prize__brand">RED SOLUTION</p>
+          </li>
+          <li class="prize">
+            <div class="prize__stage">
+              <span class="prize__podium" aria-hidden="true"></span>
+              <img class="prize__img" src="assets/prizes/red-prize-3.svg" width="442" height="268" loading="lazy" decoding="async" alt="Умный очиститель воздуха RED SOLUTION UMI">
+            </div>
+            <h3 class="prize__title">Умный очиститель воздуха UMI</h3>
+            <p class="prize__brand">RED SOLUTION</p>
+          </li>
+          <li class="prize">
+            <div class="prize__stage">
+              <span class="prize__podium" aria-hidden="true"></span>
+              <img class="prize__img" src="assets/prizes/red-prize-4.svg" width="442" height="268" loading="lazy" decoding="async" alt="Умный робот-пылесос RED SOLUTION RV-RL6000S Wi-Fi">
+            </div>
+            <h3 class="prize__title"><span class="nowrap">Робот-пылесос</span> <span class="nowrap">RV-RL6000S Wi-Fi</span></h3>
+            <p class="prize__brand">RED SOLUTION</p>
+          </li>
+          <li class="prize">
+            <div class="prize__stage">
+              <span class="prize__podium" aria-hidden="true"></span>
+              <img class="prize__img" src="assets/prizes/red-prize-5.svg" width="442" height="268" loading="lazy" decoding="async" alt="Ручной отпариватель RED SOLUTION HS700">
+            </div>
+            <h3 class="prize__title">Ручной отпариватель HS700</h3>
+            <p class="prize__brand">RED SOLUTION</p>
+          </li>
+          <li class="prize">
+            <div class="prize__stage">
+              <span class="prize__podium" aria-hidden="true"></span>
+              <img class="prize__img" src="assets/prizes/red-prize-6.svg" width="442" height="268" loading="lazy" decoding="async" alt="Чайник RED SOLUTION COLORSENSE AM120D">
+            </div>
+            <h3 class="prize__title">Чайник COLORSENSE <span class="nowrap">AM120D</span></h3>
+            <p class="prize__brand">RED SOLUTION</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Winners + quiz teaser -->
+    <section class="band band--dark winners" id="winners" aria-labelledby="winners-title">
+      <div class="container winners__grid">
+        <div class="winners__status">
+          <h2 class="winners__title" id="winners-title"><svg class="winners__trophy" aria-hidden="true"><use href="#i-trophy"/></svg>Победители акции</h2>
+          <div class="flapboard" aria-hidden="true" data-flapboard data-word="ИТОГИ СКОРО"><span class="flap"><span class="flap__char">И</span></span><span class="flap"><span class="flap__char">Т</span></span><span class="flap"><span class="flap__char">О</span></span><span class="flap"><span class="flap__char">Г</span></span><span class="flap"><span class="flap__char">И</span></span><span class="flap flap--gap"></span><span class="flap"><span class="flap__char">С</span></span><span class="flap"><span class="flap__char">К</span></span><span class="flap"><span class="flap__char">О</span></span><span class="flap"><span class="flap__char">Р</span></span><span class="flap"><span class="flap__char">О</span></span></div>
+          <p class="winners__text">Результаты появятся после розыгрышей.</p>
+        </div>
+        <div class="teaser">
+          <span class="badge-icon" aria-hidden="true"><svg><use href="#i-paw"/></svg></span>
+          <div class="teaser__body">
+            <h3 class="teaser__title">Квиз о питомцах</h3>
+            <p class="teaser__text">Пройдите небольшой квиз и&nbsp;узнайте больше о&nbsp;заботе о&nbsp;вашем питомце.</p>
+          </div>
+          <a class="btn btn--dark btn--sm" href="#quiz">
+            Пройти квиз <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section class="section" id="quiz" aria-labelledby="quiz-title">
+      <div class="container quiz">
+        <div class="quiz__intro">
+          <h2 class="section-title" id="quiz-title"><span class="title-mark">Расскажите о&nbsp;своём питомце</span></h2>
+          <p class="section-lead">Три коротких вопроса. Ответы остаются в&nbsp;браузере и&nbsp;не&nbsp;влияют на&nbsp;участие в&nbsp;акции.</p>
+          <div class="passport" aria-hidden="true" data-passport>
+            <p class="passport__head"><svg class="icon"><use href="#i-paw"/></svg>Паспорт питомца</p>
+            <div class="passport__body">
+              <div class="passport__photo" data-pp-photo>
+                <span class="passport__unknown">?</span>
+                <svg class="passport__pet passport__pet--cat"><use href="#pet-cat"/></svg>
+                <svg class="passport__pet passport__pet--dog"><use href="#pet-dog"/></svg>
+              </div>
+              <dl class="passport__fields">
+                <div><dt>Питомец</dt><dd data-pp="pet">…</dd></div>
+                <div><dt>Возраст</dt><dd data-pp="age">…</dd></div>
+                <div><dt>Важно</dt><dd data-pp="focus">…</dd></div>
+              </dl>
+            </div>
+            <span class="passport__stamp">LIMKORM<small>заполнено</small></span>
+          </div>
+        </div>
+        <div class="quiz__card" data-quiz>
+          <div class="quiz__progress" aria-hidden="true"><span class="quiz__bar" data-quiz-bar></span></div>
+          <form class="quiz__step" data-quiz-step="0">
+            <fieldset>
+              <legend class="quiz__question"><span class="quiz__count">Вопрос 1 из&nbsp;3</span>Кто живёт у&nbsp;вас дома?</legend>
+              <div class="quiz__options">
+                <label class="option"><input type="radio" name="pet" value="кошка" required><span><svg class="option__pet" aria-hidden="true"><use href="#pet-cat"/></svg>Кошка</span></label>
+                <label class="option"><input type="radio" name="pet" value="собака"><span><svg class="option__pet" aria-hidden="true"><use href="#pet-dog"/></svg>Собака</span></label>
+                <label class="option"><input type="radio" name="pet" value="кошка и собака"><span><span class="option__pair" aria-hidden="true"><svg class="option__pet"><use href="#pet-cat"/></svg><svg class="option__pet"><use href="#pet-dog"/></svg></span>И&nbsp;кошка, и&nbsp;собака</span></label>
+              </div>
+            </fieldset>
+            <button class="btn btn--dark" type="submit">Дальше <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </form>
+          <form class="quiz__step" data-quiz-step="1" hidden>
+            <fieldset>
+              <legend class="quiz__question"><span class="quiz__count">Вопрос 2 из&nbsp;3</span>Сколько лет питомцу?</legend>
+              <div class="quiz__options">
+                <label class="option"><input type="radio" name="age" value="малыш" required><span>До&nbsp;года</span></label>
+                <label class="option"><input type="radio" name="age" value="взрослый"><span>От&nbsp;1&nbsp;до&nbsp;7&nbsp;лет</span></label>
+                <label class="option"><input type="radio" name="age" value="старший"><span>Старше 7&nbsp;лет</span></label>
+              </div>
+            </fieldset>
+            <div class="quiz__actions">
+              <button class="btn btn--ghost" type="button" data-quiz-back>Назад</button>
+              <button class="btn btn--dark" type="submit">Дальше <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            </div>
+          </form>
+          <form class="quiz__step" data-quiz-step="2" hidden>
+            <fieldset>
+              <legend class="quiz__question"><span class="quiz__count">Вопрос 3 из&nbsp;3</span>Что для вас важнее в&nbsp;корме?</legend>
+              <div class="quiz__options">
+                <label class="option"><input type="radio" name="focus" value="состав" required><span>Мясной состав</span></label>
+                <label class="option"><input type="radio" name="focus" value="пищеварение"><span>Мягкое пищеварение</span></label>
+                <label class="option"><input type="radio" name="focus" value="энергия"><span>Энергия на&nbsp;каждый день</span></label>
+              </div>
+            </fieldset>
+            <div class="quiz__actions">
+              <button class="btn btn--ghost" type="button" data-quiz-back>Назад</button>
+              <button class="btn btn--dark" type="submit">Узнать результат</button>
+            </div>
+          </form>
+          <div class="quiz__result" data-quiz-result hidden tabindex="-1">
+            <span class="badge-icon" aria-hidden="true"><svg><use href="#i-paw"/></svg></span>
+            <h3 class="quiz__result-title" data-quiz-title>Готово!</h3>
+            <p class="quiz__result-text" data-quiz-text></p>
+            <div class="quiz__actions">
+              <a class="btn btn--dark" href="#buy">Где купить корм</a>
+              <button class="btn btn--ghost" type="button" data-quiz-reset>Пройти заново</button>
+            </div>
+          </div>
+          <p class="visually-hidden" aria-live="polite" data-quiz-live></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rules -->
+    <section class="section section--tint" id="rules" aria-labelledby="rules-title">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <h2 class="section-title" id="rules-title"><span class="title-mark">Условия акции</span></h2>
+          <p class="section-aside">Сроки и&nbsp;документы появятся здесь после утверждения организатором.</p>
+        </div>
+        <div class="folder" data-tabs>
+          <div class="folder__tabs" role="tablist" aria-label="Условия акции">
+            <button class="folder__tab" type="button" role="tab" id="tab-dates" aria-controls="panel-dates" aria-selected="true">
+              <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>Сроки
+            </button>
+            <button class="folder__tab" type="button" role="tab" id="tab-rules" aria-controls="panel-rules" aria-selected="false" tabindex="-1">
+              <svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg>Правила
+            </button>
+            <button class="folder__tab" type="button" role="tab" id="tab-draws" aria-controls="panel-draws" aria-selected="false" tabindex="-1">
+              <svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg>Розыгрыши
+            </button>
+          </div>
+          <div class="folder__sheet">
+            <span class="folder__stamp" aria-hidden="true">На&nbsp;утверждении</span>
+
+            <div class="folder__panel" role="tabpanel" id="panel-dates" aria-labelledby="tab-dates" tabindex="0">
+              <h3 class="folder__title">Сроки акции</h3>
+              <p class="folder__text">Даты каждого этапа появятся здесь после утверждения правил организатором.</p>
+              <ol class="timeline">
+                <li><span class="timeline__dot" aria-hidden="true"></span><b>Покупка корма</b><span>Дата уточняется</span></li>
+                <li><span class="timeline__dot" aria-hidden="true"></span><b>Регистрация чеков</b><span>Дата уточняется</span></li>
+                <li><span class="timeline__dot" aria-hidden="true"></span><b>Розыгрыши призов</b><span>Дата уточняется</span></li>
+                <li><span class="timeline__dot" aria-hidden="true"></span><b>Выдача призов</b><span>Дата уточняется</span></li>
+              </ol>
+            </div>
+
+            <div class="folder__panel" role="tabpanel" id="panel-rules" aria-labelledby="tab-rules" tabindex="0" hidden>
+              <h3 class="folder__title">Правила акции</h3>
+              <p class="folder__text">В официальном документе будет всё, что нужно знать перед покупкой:</p>
+              <ul class="checklist" role="list">
+                <li>Перечень участвующих товаров и&nbsp;артикулов</li>
+                <li>Требования к&nbsp;чеку и&nbsp;ограничения на&nbsp;участие</li>
+                <li>Порядок получения промокода LIMKORM</li>
+                <li>Количество призов и&nbsp;порядок их&nbsp;выдачи</li>
+              </ul>
+              <button class="btn btn--dark btn--sm" type="button" data-info="rules">
+                <svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg>Открыть правила
+              </button>
+            </div>
+
+            <div class="folder__panel" role="tabpanel" id="panel-draws" aria-labelledby="tab-draws" tabindex="0" hidden>
+              <h3 class="folder__title">Розыгрыши</h3>
+              <p class="folder__text">Призы от&nbsp;RED&nbsp;SOLUTION разыгрываются среди зарегистрированных чеков.</p>
+              <ul class="checklist" role="list">
+                <li>Даты этапов розыгрыша</li>
+                <li>Способ определения победителей</li>
+                <li>Публикация результатов в&nbsp;разделе <a href="#winners">«Победители акции»</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq__grid">
+        <div class="faq__intro">
+          <h2 class="section-title" id="faq-title"><span class="title-mark">Частые вопросы</span> <span class="faq__tag">FAQ</span></h2>
+          <p class="section-lead">Здесь собраны ответы на&nbsp;популярные вопросы об&nbsp;акции LIMKORM. Если не&nbsp;нашли нужный ответ, напишите в&nbsp;поддержку.</p>
+          <button class="link-btn" type="button" data-info="support">Связаться с&nbsp;поддержкой</button>
+        </div>
+        <div class="faq__art" aria-hidden="true">
+          <img src="assets/img/pets.webp" width="322" height="535" loading="lazy" alt="">
+        </div>
+        <div class="faq__list">
+          <details class="qa" name="faq" open>
+            <summary><span class="qa__mark" aria-hidden="true"><svg><use href="#i-plus"/></svg></span><span class="qa__q">Какие бренды участвуют в&nbsp;акции?</span><svg class="qa__chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="qa__a"><svg class="qa__avatar" aria-hidden="true"><use href="#pet-dog"/></svg><div class="qa__bubble"><span class="qa__typing" aria-hidden="true"><i></i><i></i><i></i></span><p>AJO, SIRIUS, Одно Мясо и&nbsp;Наш Рацион. Перечень участвующих товаров будет указан в&nbsp;правилах акции.</p></div></div>
+          </details>
+          <details class="qa" name="faq">
+            <summary><span class="qa__mark" aria-hidden="true"><svg><use href="#i-plus"/></svg></span><span class="qa__q">Где можно купить продукцию?</span><svg class="qa__chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="qa__a"><svg class="qa__avatar" aria-hidden="true"><use href="#pet-cat"/></svg><div class="qa__bubble"><span class="qa__typing" aria-hidden="true"><i></i><i></i><i></i></span><p>В официальных магазинах LIMKORM на&nbsp;Ozon, Wildberries и&nbsp;Яндекс Маркете — ссылки в&nbsp;разделе <a href="#buy">«Где купить?»</a>. Требования к&nbsp;месту покупки будут указаны в&nbsp;правилах.</p></div></div>
+          </details>
+          <details class="qa" name="faq">
+            <summary><span class="qa__mark" aria-hidden="true"><svg><use href="#i-plus"/></svg></span><span class="qa__q">Какие именно товары участвуют?</span><svg class="qa__chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="qa__a"><svg class="qa__avatar" aria-hidden="true"><use href="#pet-dog"/></svg><div class="qa__bubble"><span class="qa__typing" aria-hidden="true"><i></i><i></i><i></i></span><p>Полный перечень товаров и&nbsp;артикулов ещё не&nbsp;утверждён. Перед покупкой сверьтесь со&nbsp;списком в&nbsp;правилах акции.</p></div></div>
+          </details>
+          <details class="qa" name="faq">
+            <summary><span class="qa__mark" aria-hidden="true"><svg><use href="#i-plus"/></svg></span><span class="qa__q">Как зарегистрировать чек?</span><svg class="qa__chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="qa__a"><svg class="qa__avatar" aria-hidden="true"><use href="#pet-cat"/></svg><div class="qa__bubble"><span class="qa__typing" aria-hidden="true"><i></i><i></i><i></i></span><p>Нажмите «Зарегистрировать чек», укажите контакт и&nbsp;прикрепите фото чека. Сейчас форма работает в&nbsp;демонстрационном режиме и&nbsp;не&nbsp;отправляет данные. Требования к&nbsp;чеку появятся в&nbsp;правилах.</p></div></div>
+          </details>
+          <details class="qa" name="faq">
+            <summary><span class="qa__mark" aria-hidden="true"><svg><use href="#i-plus"/></svg></span><span class="qa__q">Можно ли участвовать несколько раз?</span><svg class="qa__chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="qa__a"><svg class="qa__avatar" aria-hidden="true"><use href="#pet-dog"/></svg><div class="qa__bubble"><span class="qa__typing" aria-hidden="true"><i></i><i></i><i></i></span><p>Количество чеков и&nbsp;повторных участий определят правила акции. В&nbsp;текущих материалах ограничения не&nbsp;указаны.</p></div></div>
+          </details>
+          <details class="qa" name="faq">
+            <summary><span class="qa__mark" aria-hidden="true"><svg><use href="#i-plus"/></svg></span><span class="qa__q">Где действует промокод LIMKORM?</span><svg class="qa__chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="qa__a"><svg class="qa__avatar" aria-hidden="true"><use href="#pet-cat"/></svg><div class="qa__bubble"><span class="qa__typing" aria-hidden="true"><i></i><i></i><i></i></span><p>В интернет-магазине <a href="https://redsolution.company" target="_blank" rel="noopener">redsolution.company</a>: скидка 1&nbsp;000&nbsp;₽ при покупке от&nbsp;3&nbsp;000&nbsp;₽. Срок действия, ограничения и&nbsp;порядок получения кода будут указаны в&nbsp;правилах.</p></div></div>
+          </details>
+          <details class="qa" name="faq">
+            <summary><span class="qa__mark" aria-hidden="true"><svg><use href="#i-plus"/></svg></span><span class="qa__q">Когда начинается и&nbsp;заканчивается акция?</span><svg class="qa__chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="qa__a"><svg class="qa__avatar" aria-hidden="true"><use href="#pet-dog"/></svg><div class="qa__bubble"><span class="qa__typing" aria-hidden="true"><i></i><i></i><i></i></span><p>Период покупок, регистрации чеков, розыгрышей и&nbsp;выдачи призов будет опубликован в&nbsp;правилах. Подтверждённых дат пока нет.</p></div></div>
+          </details>
+          <details class="qa" name="faq">
+            <summary><span class="qa__mark" aria-hidden="true"><svg><use href="#i-plus"/></svg></span><span class="qa__q">Какие призы можно получить?</span><svg class="qa__chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="qa__a"><svg class="qa__avatar" aria-hidden="true"><use href="#pet-cat"/></svg><div class="qa__bubble"><span class="qa__typing" aria-hidden="true"><i></i><i></i><i></i></span><p>Технику RED SOLUTION: умного робота LOONA, гриль-духовку G850P, очиститель воздуха UMI, робот-пылесос RV-RL6000S Wi-Fi, отпариватель HS700 и&nbsp;чайник COLORSENSE AM120D. Количество и&nbsp;порядок выдачи будут указаны в&nbsp;правилах.</p></div></div>
+          </details>
+          <details class="qa" name="faq">
+            <summary><span class="qa__mark" aria-hidden="true"><svg><use href="#i-plus"/></svg></span><span class="qa__q">Где посмотреть победителей?</span><svg class="qa__chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="qa__a"><svg class="qa__avatar" aria-hidden="true"><use href="#pet-dog"/></svg><div class="qa__bubble"><span class="qa__typing" aria-hidden="true"><i></i><i></i><i></i></span><p>В разделе <a href="#winners">«Победители акции»</a>. Результаты появятся после розыгрышей.</p></div></div>
+          </details>
+          <details class="qa" name="faq">
+            <summary><span class="qa__mark" aria-hidden="true"><svg><use href="#i-plus"/></svg></span><span class="qa__q">Где найти правила и&nbsp;контакты поддержки?</span><svg class="qa__chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="qa__a"><svg class="qa__avatar" aria-hidden="true"><use href="#pet-cat"/></svg><div class="qa__bubble"><span class="qa__typing" aria-hidden="true"><i></i><i></i><i></i></span><p>Правила и&nbsp;контакты поддержки будут опубликованы в&nbsp;разделе <a href="#rules">«Условия акции»</a> и&nbsp;в&nbsp;подвале сайта после утверждения организатором.</p></div></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="band band--dark cta" aria-labelledby="cta-title">
+      <div class="container cta__grid">
+        <h2 class="section-title cta__title" id="cta-title">Подарки начинаются с&nbsp;заботы</h2>
+        <img class="cta__pets" src="assets/img/hero-pets.webp" width="619" height="535" loading="lazy" alt="">
+        <button class="btn btn--accent" type="button" data-open="receipt-dialog">
+          Зарегистрировать чек <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <a class="wordmark wordmark--light" translate="no" href="#top" aria-label="LIMKORM — в начало страницы">LIMKORM</a>
+      <img class="site-footer__partner" src="assets/img/red-solution.png" width="450" height="131" alt="RED SOLUTION">
+      <ul class="site-footer__links" role="list">
+        <li><a href="#rules">Правила акции</a></li>
+        <li><button class="link-plain" type="button" data-info="privacy">Политика конфиденциальности</button></li>
+        <li><button class="link-plain" type="button" data-info="support">Поддержка</button></li>
+      </ul>
+      <p class="site-footer__note">Макет для согласования. Сроки и&nbsp;состав призов уточняются.<br>© 2026 LIMKORM</p>
+    </div>
+  </footer>
+
+  <!-- Receipt registration (demo) -->
+  <dialog class="modal" id="receipt-dialog" aria-labelledby="receipt-title">
+    <div class="modal__body">
+      <div class="modal__head">
+        <h2 class="modal__title" id="receipt-title">Регистрация чека</h2>
+        <button class="modal__close" type="button" data-close aria-label="Закрыть"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      </div>
+      <form class="receipt-form" novalidate data-receipt-form>
+        <p class="demo-note">Демо-режим: данные никуда не&nbsp;отправляются и&nbsp;не&nbsp;сохраняются.</p>
+        <div class="field">
+          <label class="field__label" for="receipt-contact">Телефон или e-mail</label>
+          <input class="field__input" id="receipt-contact" name="contact" type="text" inputmode="email" autocomplete="email" placeholder="+7 900 000-00-00 или mail@example.ru…" spellcheck="false" required aria-describedby="receipt-contact-error">
+          <p class="field__error" id="receipt-contact-error" hidden>Укажите телефон или e-mail, чтобы мы могли сообщить о&nbsp;статусе чека.</p>
+        </div>
+        <div class="field">
+          <span class="field__label" id="receipt-file-label">Фото чека</span>
+          <label class="dropzone">
+            <input class="dropzone__input" name="receipt" type="file" accept="image/*,application/pdf" required aria-labelledby="receipt-file-label" aria-describedby="receipt-file-hint receipt-file-error">
+            <svg class="icon" aria-hidden="true"><use href="#i-upload"/></svg>
+            <span class="dropzone__text" data-file-name>Выберите файл</span>
+          </label>
+          <p class="field__hint" id="receipt-file-hint">JPG, PNG или PDF. Чек должен быть виден целиком.</p>
+          <p class="field__error" id="receipt-file-error" hidden>Прикрепите фото или скан чека.</p>
+        </div>
+        <label class="check">
+          <input type="checkbox" name="consent" required aria-describedby="receipt-consent-error">
+          <span>Согласен с&nbsp;правилами акции и&nbsp;обработкой персональных данных</span>
+        </label>
+        <p class="field__error" id="receipt-consent-error" hidden>Подтвердите согласие, чтобы продолжить.</p>
+        <button class="btn btn--dark btn--block" type="submit">Отправить чек</button>
+      </form>
+      <div class="modal__done" data-receipt-done hidden tabindex="-1">
+        <span class="badge-icon" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+        <h3 class="modal__subtitle">Форма заполнена верно</h3>
+        <p>Это демонстрация: чек не&nbsp;отправлен. Приём чеков заработает после подключения сервиса проверки и&nbsp;публикации правил акции.</p>
+        <button class="btn btn--dark btn--block" type="button" data-close>Понятно</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Info (rules / privacy / support) -->
+  <dialog class="modal" id="info-dialog" aria-labelledby="info-title">
+    <div class="modal__body">
+      <div class="modal__head">
+        <h2 class="modal__title" id="info-title" data-info-title></h2>
+        <button class="modal__close" type="button" data-close aria-label="Закрыть"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      </div>
+      <p data-info-text></p>
+      <button class="btn btn--dark btn--block" type="button" data-close>Понятно</button>
+    </div>
+  </dialog>
+
+  <!-- Countdown to the promo start. Set the approved date in data-start (ISO, Moscow time). -->
+  <aside class="countdown" aria-label="До старта акции" data-countdown data-start="2026-12-01T00:00:00+03:00" hidden>
+    <span class="visually-hidden" data-countdown-sr></span>
+    <span class="countdown__num" aria-hidden="true" data-countdown-num>0</span>
+    <span class="countdown__text" aria-hidden="true"><span class="countdown__label">до старта акции</span><b data-countdown-unit>дней</b></span>
+    <button class="countdown__close" type="button" aria-label="Скрыть счётчик" data-countdown-close><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+  </aside>
+
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+</body>
+</html>
