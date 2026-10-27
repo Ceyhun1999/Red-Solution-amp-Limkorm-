@@ -32,7 +32,7 @@
       if (Number.isNaN(days) || days <= 0 || dismissed) { countdown.hidden = true; return; }
       $('[data-countdown-num]', countdown).textContent = days;
       $('[data-countdown-unit]', countdown).textContent = plural(days);
-      $('[data-countdown-sr]', countdown).textContent = `До старта акции ${days} ${plural(days)}`;
+      $('[data-countdown-sr]', countdown).textContent = `До старта акции ${days} ${plural(days)}. Акция стартует 1 ноября 2026 года`;
       countdown.hidden = false;
     };
     render();
