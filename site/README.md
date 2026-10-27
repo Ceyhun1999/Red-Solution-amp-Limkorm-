@@ -27,7 +27,7 @@ site/
     ├── fonts/            Onest (woff2, кириллица + латиница), локально
     ├── img/              hero-pets.webp, pets.webp, red-solution.png, логотипы магазинов, favicon, og-cover.jpg
     ├── brands/           логотипы AJO, SIRIUS, Одно Мясо, Наш Рацион и фото упаковок
-    └── prizes/           8 фото призов RED SOLUTION для питомцев (WebP 600×600)
+    └── prizes/           9 фото призов RED SOLUTION для питомцев (WebP 600×600)
 ```
 
 Секции: шапка → hero → как участвовать → бренды (4) → где купить → подарок каждому → призы (6) → победители и квиз-тизер → квиз → условия → FAQ (10 вопросов) → финальный CTA → подвал.
@@ -41,7 +41,7 @@ site/
 | `brands/pack-*.webp` | Упаковки вырезаны из постера клиента `materials/referans_vizual/photo_…663_w.jpg`, фон прозрачный |
 | `brands/ajo.png`, `one-meat.png`, `nash-ratsion.png` | Логотипы из `materials/` (AJO на прозрачном фоне, Одно Мясо вертикальный black&red, Наш Рацион новый) |
 | `brands/sirius.png` | Логотип SIRIUS из прототипа |
-| `prizes/*.webp` | Фото из `materials/Rs`: обрезаны прозрачные поля, уменьшены до 600×600 |
+| `prizes/*.webp` | Фото из `materials/Rs`, кормушки 09S и RFP40S с redsolution.company: обрезаны прозрачные поля, уменьшены до 600×600 |
 | `img/red-solution.png` | Логотип RED SOLUTION извлечён из постера клиента (растр 450×131) |
 | `img/store-wb.png`, `img/store-market.png` | Логотипы из презентации клиента |
 | `img/og-cover.jpg` | Кадр 1200×630 из ключевого визуала |
